@@ -612,7 +612,7 @@ iframe {
   margin: 0 auto;
   padding: 40px;
 
-  background-image: url("Imagenes/ChatGPT Image 25 sept 2025, 23_09_35.png");
+  background-image: url("ChatGPT Image 25 sept 2025, 23_09_35.png");
   background-size: cover;
   background-position: center;
 
@@ -1256,3 +1256,4 @@ body.debug-mobile .menu.is-open {
     transform: translateX(0%);
   }
 }
+
