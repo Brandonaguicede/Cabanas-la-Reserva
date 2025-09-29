@@ -14,17 +14,20 @@
 
 <body>
     <section class="hero-section">
-        <header class="superior">
+       <header class="superior">
   <div class="logo">
     <img src="LOGO CABINAS.1.png" alt="Logo Cabañas La Reserva" class="footer-logo">
   </div>
 
-  <!-- Botón hamburguesa (mobile) -->
-  <button class="nav-toggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
+  <!-- 1) checkbox oculto -->
+  <input type="checkbox" id="navToggle" class="nav-check" aria-hidden="true">
+
+  <!-- 2) botón hamburguesa (label del checkbox) -->
+  <label for="navToggle" class="nav-toggle" aria-controls="navMenu" aria-label="Abrir menú">
     <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-  </button>
+  </label>
 
-
+  <!-- 3) menú -->
   <nav class="menu" id="navMenu">
     <ul class="opciones">
       <li><a href="#instalaciones">Instalaciones</a></li>
@@ -34,7 +37,11 @@
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
+
+  <!-- 4) backdrop clicable para cerrar -->
+  <label for="navToggle" class="mobile-backdrop" aria-hidden="true"></label>
 </header>
+
 
 
         <img src="HERO.jpg" alt="Cabinas La Reserva" class="hero-background">
@@ -449,4 +456,7 @@
 
 
 </html>
+
+
+
 
