@@ -612,7 +612,7 @@ iframe {
   margin: 0 auto;
   padding: 40px;
 
-  background-image: url("ChatGPT Image 25 sept 2025, 23_09_35.png");
+  background-image: url("Imagenes/ChatGPT Image 25 sept 2025, 23_09_35.png");
   background-size: cover;
   background-position: center;
 
@@ -883,49 +883,112 @@ iframe {
   }
 
   /* HERO */
-  .hero-section {
-    height: 75vh;
-    min-height: 420px;
-    margin-bottom: 24px;
-  }
+  /* ===== HERO 100% RESPONSIVE (pegar al final) ===== */
 
-  .hero-texto {
-    width: 92%;
-    padding: 16px;
-  }
+/* Base: alto seguro en móviles, sin paddings que achiquen la foto */
+.hero-section{
+  position: relative;
+  min-height: 100svh;     /* alto completo seguro en móviles */
+  height: 100svh;
+  overflow: hidden;
+  margin-bottom: 28px;
+  background:#000;        /* evita flash blanco al cargar imagen */
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
 
-  .hero-texto h1 {
-    font-size: 2rem;
-  }
+/* Imagen de fondo: cubre y centra un poco más arriba para ver cielo */
+.hero-background{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 55%;
+  z-index: 0;
+  transform: translateZ(0);
+}
 
-  .hero-texto h2 {
-    font-size: 1.125rem;
-  }
+/* Overlay con gradiente para legibilidad del texto y clicks libres */
+.hero-overlay{
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.55) 65%, rgba(0,0,0,.7) 100%);
+  z-index: 1;
+  pointer-events: none; /* importante: no bloquea el nav */
+}
 
-  /* SERVICIOS (carrusel) */
-  .servicios {
-    padding: 12px 16px;
-  }
+/* Header flotando sobre el hero (mantén tu hamburguesa) */
+.superior{
+  position: absolute;
+  top: env(safe-area-inset-top);
+  left: 0; right: 0;
+  z-index: 110;
+  background: transparent;
+  padding: 12px max(16px, env(safe-area-inset-right)) 12px max(16px, env(safe-area-inset-left));
+}
 
-  .fotos-Servicios {
-    margin: 0 auto 24px;
-  }
+/* Caja de texto: en móvil pegada abajo, centrada y legible */
+.hero-texto{
+  position: absolute;
+  left: 50%;
+  bottom: 8svh;
+  transform: translateX(-50%);
+  width: min(92vw, 760px);
+  color: #fff;
+  text-align: center;
+  z-index: 2;
 
-  .slide_Servicio {
-    height: 48vh;
-  }
+  background: rgba(0,0,0,.38);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  padding: clamp(12px, 4vw, 24px);
+  border-radius: 12px;
+  text-shadow: 0 2px 18px rgba(0,0,0,.55);
+}
 
-  .overlayServicio {
-    padding: 12px;
-  }
+/* Tipografía fluida */
+.hero-texto h1{
+  font-family: "Arial", sans-serif;
+  font-weight: 800;
+  letter-spacing: .2px;
+  margin: 0 0 8px 0;
+  font-size: clamp(1.6rem, 7vw, 2.4rem);
+  line-height: 1.15;
+}
+.hero-texto h2{
+  font-family: "Arial", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  opacity: .95;
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  line-height: 1.4;
+}
 
-  .overlayServicio h3 {
-    font-size: 1.1rem;
-  }
+/* Resaltado con buen contraste */
+.resaltado{ color:#cfeea5; font-weight: 900; }
 
-  .overlayServicio ul {
-    font-size: 0.95rem;
+/* ===== Ajustes por breakpoints ===== */
+
+/* Tablets y arriba: puedes recentrar vertical si lo prefieres */
+@media (min-width: 901px){
+  .hero-texto{
+    top: 50%; bottom: auto;
+    transform: translate(-50%, -44%);
+    width: min(70vw, 1000px);
+    background: rgba(0,0,0,.28);
+    padding: 28px 36px;
   }
+}
+
+/* Landscape móvil: deja más aire abajo para que no tape */
+@media (max-height: 500px) and (orientation: landscape){
+  .hero-texto{ bottom: 4svh; }
+}
+
+/* Extra pequeño */
+@media (max-width: 360px){
+  .hero-texto{ bottom: 6svh; }
+}
+
 
   /* SOBRE NOSOTROS */
   .sobre-nosotros-contenido {
@@ -1106,154 +1169,103 @@ ul li {
 /*=========================
    RESPONSIVE SOLO EN MÓVIL
    (no altera tu desktop)
+
    ========================= */
 /* Botón hamburguesa: oculto en desktop */
+/* Asegura que nada tape los clicks del header sobre el hero */
+.hero-overlay { pointer-events: none; }
+
+/* Oculta checkbox de forma accesible */
+.nav-check {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+/* Botón hamburguesa (oculto en desktop) */
 .nav-toggle {
   display: none;
   background: transparent;
-  border: 0;
-  padding: 8px;
-  cursor: pointer;
-  border-radius: 8px;
-  line-height: 0;
-}
-.nav-toggle:focus-visible {
-  outline: 2px solid #4caf50;
-  outline-offset: 2px;
+  border: 0; padding: 8px;
+  cursor: pointer; border-radius: 8px; line-height: 0;
+  position: relative; z-index: 120; /* encima del menú */
 }
 .nav-toggle .bar {
-  display: block;
-  width: 26px;
-  height: 3px;
-  margin: 5px 0;
-  background: #fff; /* se ve sobre tu header hero */
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  display: block; width: 26px; height: 3px;
+  margin: 5px 0; background: #fff;
+  transition: transform .25s ease, opacity .25s ease;
 }
+.nav-toggle:focus-visible { outline: 2px solid #4caf50; outline-offset: 2px; }
 
-/* Estado "X" cuando está abierto */
-.menu.is-open + .dummy {
-} /* (hack no-op para mejorar especificidad) */
-.nav-toggle.is-open .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-.nav-toggle.is-open .bar:nth-child(2) {
-  opacity: 0;
-}
-.nav-toggle.is-open .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
-/* Backdrop para cuando el menú está abierto (mobile) */
+/* Backdrop base (se muestra solo cuando el toggle está checked) */
 .mobile-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.4);
   z-index: 98;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-}
-.mobile-backdrop.is-show {
-  opacity: 1;
-  pointer-events: auto;
+  opacity: 0; pointer-events: none;
+  transition: opacity .25s ease;
 }
 
-/* ===== Solo móvil/tablet ===== */
+/* ===== MÓVIL/TABLET ===== */
 @media (max-width: 900px) {
+
   /* Mostrar botón en mobile */
-  .nav-toggle {
-    display: inline-block;
-    z-index: 101;
-  }
+  .nav-toggle { display: inline-block; }
 
-  /* Header mantiene layout pero con gap menor (ya tienes reglas, estas afinan) */
-  .superior {
-    padding: 12px 16px;
-    gap: 8px;
-  }
-
-  /* Menú como panel lateral derecho */
+  /* Panel lateral derecho (cerrado por defecto) */
   .menu {
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 0; right: 0;
     height: 100dvh;
     width: min(78vw, 320px);
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(4px);
-    box-shadow: -12px 0 30px rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0);
+    box-shadow: -12px 0 30px rgba(0,0,0,.25);
     transform: translateX(100%);
-    transition: transform 0.25s ease-in-out;
+    transition: transform .28s ease-in-out;
     z-index: 100;
     padding: 24px 16px;
-  }
-  .menu.is-open {
-    transform: translateX(0%);
+    display: block; /* por si algo lo escondía */
   }
 
-  /* Lista vertical y grande para tocar cómodo */
+  /* Lista vertical cómoda */
   .opciones {
+    display: flex; 
     flex-direction: column;
     align-items: stretch;
-    gap: 6px;
+     gap: 6px;
   }
   .opciones li a {
-    display: block;
-    color: #fff; /* legible sobre fondo oscuro */
-    font-size: 1.05rem;
-    padding: 12px 10px;
+
+    font-size: 1.05rem; padding: 12px 10px;
     border-radius: 8px;
   }
   .opciones li a:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: none; /* sin zoom en mobile */
+    background: rgba(255,255,255,.08);
+    transform: none;
   }
-  .opciones li a::after {
-    display: none;
-  } /* quita subrayado animado en mobile */
+  .opciones li a::after { display: none; }
 
-  /* Evitar scroll del fondo con menú abierto */
-  body.nav-open {
-    overflow: hidden;
+  /* ---- Toggle via checkbox ---- */
+  /* Abrir menú cuando el checkbox está checked */
+  #navToggle:checked ~ .menu { transform: translateX(0%); }
+
+  /* Animar el botón a "X" cuando está abierto */
+  #navToggle:checked + .nav-toggle .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  #navToggle:checked + .nav-toggle .bar:nth-child(2) { opacity: 0; }
+  #navToggle:checked + .nav-toggle .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  /* Mostrar backdrop cuando está abierto */
+  #navToggle:checked ~ .mobile-backdrop {
+    opacity: 1; pointer-events: auto;
   }
-}
 
-/* ====== MODO PRUEBA EN DESKTOP (quitar cuando termines) ====== */
-body.debug-mobile .menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100dvh;
-  width: min(78vw, 320px);
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(4px);
-  box-shadow: -12px 0 30px rgba(0, 0, 0, 0.25);
-  transform: translateX(100%);
-  transition: transform 0.25s ease-in-out;
-  z-index: 100;
-  padding: 24px 16px;
-}
-body.debug-mobile .menu.is-open {
-  transform: translateX(0%);
+  /* (Opcional) bloquear scroll del fondo en navegadores modernos */
+  html:has(#navToggle:checked) { overflow: hidden; }
 }
 
-@media (max-width: 900px) {
-  .menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100dvh;
-    width: min(78vw, 320px);
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(4px);
-    box-shadow: -12px 0 30px rgba(0, 0, 0, 0.25);
-    transform: translateX(100%);
-    transition: transform 0.25s ease-in-out;
-    z-index: 100;
-    padding: 24px 16px;
-  }
-  .menu.is-open {
-    transform: translateX(0%);
-  }
-}
+/* hero responsive */
+
+
 
