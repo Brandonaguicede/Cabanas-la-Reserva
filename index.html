@@ -45,9 +45,9 @@
     </section>
 
     <main>
-        <section class="sobre-nosotros" id="sobre-nosotros">
-            <div class="tituloPrincipalSo">  
-                <h2>-Sobre Nosotros-</h2>
+        <section class="sobre-nosotros scroll-animate" id="sobre-nosotros">
+            <div class="ubicacion-header">  
+                <h2 class="tituloPrincipal">Sobre Nosotros</h2>
             </div>
           
             <div class="sobre-nosotros-contenido">
@@ -67,28 +67,28 @@
         </section>
 
         <div class="centroPrin">
-            <div class="tituloPrincipalins">
-                <h2>-Nuestras Instalaciones-</h2>
-                <p class="textoins">Información sobre lo que ofrecemos en nuestras instalaciones.</p>
+            <div class="ubicacion-header">
+                <h2 class="tituloPrincipal">Nuestras Instalaciones</h2>
+                <p class="texto">Información sobre lo que ofrecemos en nuestras instalaciones.</p>
             </div>
         </div>
 
-        <section class="instalaciones" id="instalaciones">
+        <section class="instalaciones scroll-animate" id="instalaciones">
             <div class="ContenedorCabinas">
                 <div class="cabinasEstilo">
-                    <article class="cabina">
+                    <article class="cabina scroll-animate-stagger">
                         <img src="Cabina1.1.jpg" alt="Cabina1">
                         <h2><strong>Cabina 1</strong></h2>
                         <button class="btn-detalle" onclick="abrirModal('modalCabina1')">Ver Detalles</button>
                     </article>
 
-                    <article class="cabina">
+                    <article class="cabina scroll-animate-stagger">
                         <img src="Cabina2.2.jpg" alt="Cabina2">
                         <h2><strong>Cabina 2</strong></h2>
                         <button class="btn-detalle" onclick="abrirModal('modalCabina2')">Ver Detalles</button>
                     </article>
 
-                    <article class="cabina">
+                    <article class="cabina scroll-animate-stagger">
                         <img src="Cabina3.3.jpg" alt="Cabina3">
                         <h2><strong>Cabina 3</strong></h2>
                         <button class="btn-detalle" onclick="abrirModal('modalCabina3')">Ver Detalles</button>
@@ -136,12 +136,15 @@
             </div>
         </div>
 
-        <div class="tituloPrincipalins">
-            <h2>Nuestros Servicios</h2>
+        
+
+        <section class="servicios scroll-animate" id="servicios">
+            
+            
+            <div class="ubicacion-header">
+            <h2 class="tituloPrincipal">Nuestros Servicios</h2>
             <p class="texto">Servicios que ofrecemos en nuestras cabañas.</p>
         </div>
-
-        <section class="servicios" id="servicios">
             <section class="fotos-Servicios">
                 <div class="carrusel-servicio" id="carrusel-servicio">
                     <div class="slide_Servicio">
@@ -175,9 +178,9 @@
             <button id="botonAdelanteSer" class="btn-carrusel btn-carrusel-right" aria-label="Siguiente">&#10095;</button>
         </section>
 
-        <section class="galeriaDeFotos">
-            <div class="tituloPrincipalins">
-                <h2 class="tituloPrincipal">-Galería de fotos-</h2>
+        <section class="galeriaDeFotos scroll-animate">
+            <div class="ubicacion-header">
+                <h2 class="tituloPrincipal">Galería de fotos</h2>
                 <p class="texto">Te mostramos un poco de las cosas que puedes encontrar a los alrededores de nuestras cabañas:</p>
             </div>
 
@@ -202,13 +205,16 @@
             </div>
         </section>
 
-        <section class="Comentario">
-            <div class="tituloPrincipalins">
-                <h2>-Comentarios-</h2>
+        <section class="Comentario scroll-animate">
+          <div class="ubicacion-header">
+                 <h2 class="tituloPrincipal" >Comentarios</h2>
                 <p class="texto">¿Qué dicen nuestros clientes sobre nosotros?</p>
             </div>
+
+              
+            
             <div class="testimonios-grid">
-                <article class="testimonio-card">
+                <article class="testimonio-card scroll-animate-stagger">
                     <div class="testimonio-header">
                         <div class="cliente-avatar">TP</div>
                         <div class="cliente-info">
@@ -217,10 +223,10 @@
                         </div>
                     </div>
                     <p>"Excelente lugar, un paraiso para despegarse de la tecnologia."</p>
-                    <div class="testimonio-fecha">Hace 2 semanas</div>
+                    <div class="testimonio-fecha">Hace 6 años</div>
                 </article>
 
-                <article class="testimonio-card">
+                <article class="testimonio-card scroll-animate-stagger">
                     <div class="testimonio-header">
                         <div class="cliente-avatar">AH</div>
                         <div class="cliente-info">
@@ -229,10 +235,10 @@
                         </div>
                     </div>
                     <p>"Tranquilidad total. Excelente anfitriona."</p>
-                    <div class="testimonio-fecha">Hace 1 mes</div>
+                    <div class="testimonio-fecha">Hace 3 años</div>
                 </article>
 
-                <article class="testimonio-card">
+                <article class="testimonio-card scroll-animate-stagger">
                     <div class="testimonio-header">
                         <div class="cliente-avatar">WP</div>
                         <div class="cliente-info">
@@ -241,10 +247,10 @@
                         </div>
                     </div>
                     <p>"Muy bien y atención excelente."</p>
-                    <div class="testimonio-fecha">Hace 3 semanas</div>
+                    <div class="testimonio-fecha">Hace 4 años</div>
                 </article>
 
-                <article class="testimonio-card">
+                <article class="testimonio-card scroll-animate-stagger">
                     <div class="testimonio-header">
                         <div class="cliente-avatar">CG</div>
                         <div class="cliente-info">
@@ -258,10 +264,10 @@
             </div>
         </section>
 
-        <section class="ubicacion" id="ubicacion">
+        <section class="ubicacion scroll-animate" id="ubicacion">
             <div class="ubicacion-header">
-                <h2 class="tituloPrincipal">-Nuestra ubicación-</h2>
-                <p class="texto">Te mostramos nuestra ubicación, para que nos puedas visitar:</p>
+                <h2 class="tituloPrincipal">Contactenos</h2>
+                <p class="texto">Te mostramos nuestra ubicación y contacto para que nos puedas visitar.</p>
             </div>
 
             <div class="ubicacion-grid">
@@ -274,13 +280,16 @@
                 </div>
 
                 <aside class="card-contacto3d">
+
+                    
                     <h2 class="cardtex">Ubicación</h2>
                     <p class="texto-footer">
+                        
                         De la plaza de deportes 75 metros al sur y 25 al oeste, Provincia de Guanacaste, Matambú
                     </p>
-
+       
                     <div class="contacto-icons">
-                        <h2 class="cardtex">Redes Sociales</h2>
+                       <h2 class="cardtex">Redes Sociales</h2>
                         <div class="rrss">
                             <a href="https://wa.me/50683615879" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                                 <img src="whatsapp (1).1.png" alt="WhatsApp" class="icon">
@@ -300,9 +309,9 @@
                     <div class="contacto-info">
                         <h2 class="cardtex">Contacto</h2>
                         <p class="texto-footer">
-                            <a href="tel:+50689813481">8981-3481</a> -
-                            <a href="tel:+50683615879">8361-5879</a> -
-                            <a href="tel:+50688577250">8857-7250</a>
+                            <a href="tel:+50689813481">8981-3481</a>  /
+                            <a href="tel:+50683615879">8361-5879</a> /
+                            <a href="tel:+50688577250">8857-7250</a> /
                         </p>
                         <p class="texto-footer">
                             <a href="mailto:Hospedajelareserva8981@gmail.com">Hospedajelareserva8981@gmail.com</a>
@@ -314,9 +323,11 @@
     </main>
 
     <footer class="footer" id="contacto">
+      
+  
         <div class="footer-section">
-            <h2>-Cabañas La Reserva-</h2>
-            <p class="copyright">© 2025 Desarrollado por Brandon Aguirre</p>
+      
+            <p class="copyright">© 2025 Cabañas la Reserva .Desarrollado por <a href="mailto:webdesignerbrandon@gmail.com">Brandon Aguirre Cedeño</a> </p>
         </div>
     </footer>
 
@@ -327,10 +338,7 @@
         <img src="whatsapp (1).1.png" alt="WhatsApp">
     </a>
 
-    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-        <button class="lb-close" aria-label="Cerrar">✕</button>
-        <img id="lightbox-img" alt="">
-    </div>
+  
 </body>
 
 </html>
