@@ -103,3 +103,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const animateElements = document.querySelectorAll(".scroll-animate, .scroll-animate-stagger")
   animateElements.forEach((el) => observer.observe(el))
 })
+
+let index = 0;
+const imgs = document.querySelectorAll('.slider img');
+
+function showNext() {
+  imgs[index].classList.remove('active');
+  index = (index + 1) % imgs.length;
+  imgs[index].classList.add('active');
+}
+
+setInterval(showNext, 4000); // cambia cada 4 segundos
