@@ -223,6 +223,8 @@ header {
   overflow: hidden;
 }
 
+
+
 .slide_Servicio img {
   position: absolute;
   inset: 0;
@@ -633,6 +635,25 @@ color: #4caf50;
   justify-content: center;
 }
 
+
+.slide.cabina-scroll-animate-stagger img.active {
+  opacity: 1;
+}
+
+
+
+.slide.cabina-scroll-animate-stagger img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease; /* duración del fade */
+}
+
+
 .cabina {
   flex: 1 1 300px;
   min-width: 280px;
@@ -653,6 +674,7 @@ color: #4caf50;
   object-fit: cover;
   margin-bottom: 20px;
   border-radius: 8px;
+
 }
 
 .cabinasEstilo p {
@@ -748,6 +770,55 @@ color: #4caf50;
   font-size: 14px;
   margin: 0;
 }
+
+
+/* --- Slider: contenedor apilado --- */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* Apilar imágenes una encima de otra */
+.slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: crossfade 16s infinite; /* 4 imágenes x 4s cada una = 16s total */
+}
+
+/* Escalonar el inicio de cada imagen (4s de separación) */
+.slider img:nth-child(1) { animation-delay: 0s; }
+.slider img:nth-child(2) { animation-delay: 4s; }
+.slider img:nth-child(3) { animation-delay: 8s; }
+.slider img:nth-child(4) { animation-delay: 12s; }
+
+/* Curva de aparición/desaparición suave */
+@keyframes crossfade {
+  /* visible ~25% del tiempo, con fade-in/out */
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }   /* entrada rápida */
+  25%  { opacity: 1; }   /* se mantiene visible */
+  30%  { opacity: 0; }   /* salida */
+  100% { opacity: 0; }
+}
+
+/* Mantén tus reglas existentes,
+   solo afinamos esta para no afectar el slider */
+.cabina > img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
 
 .testimonio-card p {
   color: #555;
@@ -1081,15 +1152,18 @@ ul li {
   }
 
   .sobre-nosotros-contenido {
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    padding: 20px;
+    grid-template-columns: 1fr ;
+    gap: 40px;
+    padding: 40px;
+    height: auto;
   }
 
   .sobre-nosotros-contenido img {
     
     width: 100%;
-    max-height: 400px;
+    max-height: 200px;
+                
+  object-position: top;
   }
 
   .cabanas {
@@ -1098,11 +1172,11 @@ ul li {
   }
 
   .cabanas h2 {
-    font-size: 4%;
+    font-size: 70%;
   }
 
   .texto-sobre-nosotros {
-    font-size: 1%;
+    font-size: 50%;
     color: #444;
     text-align: center
   }
@@ -1144,22 +1218,35 @@ ul li {
   }
 
   /* Servicios carousel responsive */
+
+  .fotos-Servicios
+  {
+
+    max-width: 95%;
+    margin-bottom: 20px;
+  }
+
+  
   .servicios {
     padding: 12px 16px;
   }
 
   .btn-carrusel {
-    width: 40px;
+    width: 30px;
     height: 40px;
     font-size: 1.5rem;
   }
 
   .btn-carrusel-left {
-    left: 10px;
+    padding: 100px 0 0 0  ;
+    position:absolute;
+    left: -1px;
   }
 
   .btn-carrusel-right {
-    right: 10px;
+     padding: 100px 0 0 0  ;
+    position: absolute;
+    right: -1px;
   }
 
   .slide_Servicio {
@@ -1184,11 +1271,13 @@ ul li {
   .card-contacto3d {
     min-height: auto;
     padding: 20px;
-    gap: 20px;
+    gap: 15px;
   }
 
   .cardtex {
     font-size: 1.2rem;
+    color: #000000;
+    font-style: initial;
   }
 
   /* Comentarios responsive */
@@ -1308,5 +1397,3 @@ ul li {
 .scroll-animate-stagger.visible:nth-child(4) {
   transition-delay: 0.4s;
 }
-
-
