@@ -582,7 +582,7 @@ color: #4caf50;
 /* Instalaciones */
 .instalaciones {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   min-height: 600px;
   margin: 0 auto;
   padding: 40px 20px;
@@ -953,7 +953,7 @@ ul li {
     right: 0;
     height: 100dvh;
     width: min(78vw, 320px);
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.397);
     box-shadow: -12px 0 30px rgba(0, 0, 0, 0.25);
     transform: translateX(100%);
     transition: transform 0.28s ease-in-out;
@@ -976,13 +976,22 @@ ul li {
     color: #ffffff;
   }
 
-  .opciones li a:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: none;
-  }
+  
+
+
 
   .opciones li a::after {
-    display: none;
+
+
+    content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: #4caf50;
+  transition: width 0.3s ease;
+  border-radius: 2px;
   }
 
   #navToggle:checked ~ .menu {
@@ -1015,7 +1024,7 @@ ul li {
     min-height: 100svh;
     height: 100svh;
     margin-bottom: 28px;
-    background: #000;
+    background: #00000000;
     padding: 0;
     border-radius: 0;
     box-shadow: none;
@@ -1026,7 +1035,7 @@ ul li {
   }
 
   .hero-overlay {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.55) 65%, rgba(0, 0, 0, 0.7) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.7) 100%);
     pointer-events: none;
   }
 
@@ -1047,14 +1056,10 @@ ul li {
   .hero-texto {
     position: absolute;
     left: 50%;
-    bottom: 8svh;
     top: 50%;
     transform: translateX(-50% , -50%);
-    width: min(92vw, 760px);
-    background: rgba(0, 0, 0, 0.38);
-    backdrop-filter: blur(2px);
+    width: min(90vw, 400px);
     padding: clamp(12px, 4vw, 24px);
-    border-radius: 12px;
   }
 
   .hero-texto h1 {
@@ -1076,31 +1081,34 @@ ul li {
   }
 
   .sobre-nosotros-contenido {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
     padding: 20px;
   }
 
   .sobre-nosotros-contenido img {
+    
     width: 100%;
     max-height: 400px;
   }
 
   .cabanas {
-    padding: 20px 10px;
-    gap: 20px;
+    padding: 5px 0px;
+    gap: 5px;
   }
 
   .cabanas h2 {
-    font-size: 1.4rem;
+    font-size: 4%;
   }
 
   .texto-sobre-nosotros {
-    font-size: 1rem;
+    font-size: 1%;
+    color: #444;
+    text-align: center
   }
 
   .tituloPrincipalSo {
-    font-size: 1.5rem;
+    font-size: 2rem;
     padding: 15px;
     min-height: 60px;
   }
@@ -1131,7 +1139,7 @@ ul li {
   }
 
   .tituloPrincipalins {
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding: 15px;
   }
 
@@ -1203,7 +1211,8 @@ ul li {
   .footer {
     flex-direction: column;
     align-items: center;
-    padding: 30px 16px 10px;
+    padding: 15px 16px 10px;
+    height: 115px;
   }
 
   .footer-section {
@@ -1213,10 +1222,7 @@ ul li {
     text-align: center;
   }
 
-  .footer-logo {
-    width: 60px;
-    height: 60px;
-  }
+
 
   /* Modal responsive */
   .modal-contenido {
@@ -1237,7 +1243,7 @@ ul li {
     width: 50px;
     height: 50px;
     bottom: 15px;
-    right: 15px;
+    right: 20px;
   }
 
   .whatsapp-float img {
@@ -1302,4 +1308,5 @@ ul li {
 .scroll-animate-stagger.visible:nth-child(4) {
   transition-delay: 0.4s;
 }
+
 
