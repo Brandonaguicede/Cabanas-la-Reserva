@@ -364,7 +364,6 @@ header {
   background-color: #fffdf7;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 30px;
   background: #fff;
   color: #222;
   border-radius: 18px;
@@ -375,13 +374,14 @@ header {
 
 .sobre-nosotros-contenido img {
   width: 100%;
-  height: auto;
+  height: 600px;
   max-height: 600px;
   object-fit: cover;
   box-shadow: 0 2px 8px rgba(4, 0, 0, 0.403);
   flex-shrink: 0;
   margin-top: 0;
-  border-radius: 8px;
+  
+  
 }
 
 .tituloPrincipalSo {
@@ -1397,3 +1397,5 @@ ul li {
 .scroll-animate-stagger.visible:nth-child(4) {
   transition-delay: 0.4s;
 }
+
+
