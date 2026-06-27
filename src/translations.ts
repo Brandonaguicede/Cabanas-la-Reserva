@@ -47,13 +47,13 @@ export const translations = {
     },
     installations: {
       eyebrow: "Instalaciones",
-      title: "10 cabañas ecológicas",
+      title: "Cabañas ecológicas",
       description: "Tres espacios principales diseñados para parejas, familias y quienes buscan naturaleza en cada rincón.",
     },
     services: {
       eyebrow: "Nuestros Servicios",
-      title: "Servicios para tu estadía",
-      description: "Confort, alimentación local y atención familiar pensada para que tu descanso sea completo.",
+      title: "Todo lo que necesitas para descansar",
+      description: "Comodidades, gastronomía local y atención cercana para disfrutar una estadía tranquila en plena naturaleza.",
       recommended: "Recomendado",
       capacity: "Capacidad",
       includes: "Incluye",
@@ -61,7 +61,7 @@ export const translations = {
     serviceSlides: [
       {
         id: "service-1",
-        title: "Servicio Principal",
+        title: "Comodidades incluidas",
         items: [
           "Cabañas privadas con estacionamiento exclusivo",
           "Jardines tranquilos y ambiente natural",
@@ -70,7 +70,7 @@ export const translations = {
       },
       {
         id: "service-2",
-        title: "Servicios Adicionales",
+        title: "Gastronomía y atención local",
         items: [
           "Desayunos tradicionales con gallo pinto y café",
           "Comidas caseras bajo pedido",
@@ -207,13 +207,13 @@ export const translations = {
     },
     installations: {
       eyebrow: "Facilities",
-      title: "10 eco-friendly cabins",
+      title: "Eco-friendly cabins",
       description: "Three main spaces designed for couples, families, and those seeking nature in every corner.",
     },
     services: {
       eyebrow: "Our Services",
-      title: "Services for your stay",
-      description: "Comfort, local food, and family hospitality designed to make your rest complete.",
+      title: "Everything you need to unwind",
+      description: "Comfort, local cuisine, and attentive hospitality for a peaceful stay surrounded by nature.",
       recommended: "Recommended",
       capacity: "Capacity",
       includes: "Includes",
@@ -221,7 +221,7 @@ export const translations = {
     serviceSlides: [
       {
         id: "service-1",
-        title: "Main Service",
+        title: "Included amenities",
         items: [
           "Private cabins with exclusive parking",
           "Peaceful gardens and natural atmosphere",
@@ -230,7 +230,7 @@ export const translations = {
       },
       {
         id: "service-2",
-        title: "Additional Services",
+        title: "Local cuisine and hospitality",
         items: [
           "Traditional breakfasts with gallo pinto and coffee",
           "Homemade meals available on request",
