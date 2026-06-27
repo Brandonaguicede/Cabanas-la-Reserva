@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -14,6 +14,14 @@ import { translations, type Language } from "./translations";
 function App() {
   const [language, setLanguage] = useState<Language>("es");
   const t = translations[language];
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+    document.title =
+      language === "es"
+        ? "Cabañas La Reserva | Hospedaje en Matambú"
+        : "Cabañas La Reserva | Lodging in Matambú";
+  }, [language]);
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">

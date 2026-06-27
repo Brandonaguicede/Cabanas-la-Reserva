@@ -130,6 +130,9 @@ export const translations = {
       featured: "Destacado",
       infoButton: "Más info",
       closeButton: "Cerrar",
+      capacityLabel: "Capacidad",
+      includesLabel: "Incluye",
+      recommendedLabel: "Recomendado",
       details: {
         "cabin-1": {
           title: "Cabina Familiar",
@@ -290,6 +293,9 @@ export const translations = {
       featured: "Featured",
       infoButton: "More info",
       closeButton: "Close",
+      capacityLabel: "Capacity",
+      includesLabel: "Includes",
+      recommendedLabel: "Recommended",
       details: {
         "cabin-1": {
           title: "Family Cabin",
