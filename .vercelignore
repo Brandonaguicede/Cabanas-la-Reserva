@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.tsbuildinfo
+/*.jpg
+/*.jpeg
+/*.png
+/main.js
+/styles.css
+/Imagenes
